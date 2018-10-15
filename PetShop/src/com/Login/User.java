@@ -1,5 +1,11 @@
 package com.Login;
 
+/**
+ * Class of Getters and Setters to set information 
+ * about the user who is logged in to allow the 
+ * program to get information that is required
+ */
+
 
 public class User {
 
@@ -58,12 +64,4 @@ public class User {
 	public void setUserID(int nUID) {
 		UID=nUID;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }

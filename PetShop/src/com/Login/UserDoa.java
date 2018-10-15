@@ -1,10 +1,16 @@
 package com.Login;
 import java.sql.*;
+import com.Connection.Connections;
 public class UserDoa {
 	static Connection myconn = null;
 	static ResultSet rs = null;
 	
-	//based off a User Bean
+	/**
+	 * Checks to see if the user is in the database
+	 * If the user is it will assaign the information to the 
+	 * getters and setters in User.java
+	 * if not sets isValid to false.
+	 */
 	public static User login(User bean) {
 		Statement stmt = null;
 		String username = bean.getUser();
@@ -17,7 +23,6 @@ public class UserDoa {
 			boolean isTrue = rs.next();
 			
 			if(!isTrue) {
-				System.out.println("Either you are not a registered User or Wrong Username/Password");
 				bean.setValid(false);
 			}
 			else if(isTrue)
